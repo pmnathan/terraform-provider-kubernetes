@@ -23,6 +23,12 @@ resource "kubernetes_namespace" "test2" {
   }
 }
 
+resource "kubernetes_namespace" "test3" {
+  metadata {
+    name = "test3"
+  }
+}
+
 resource "kubernetes_deployment" "test" {
   metadata {
     name = "test"
