@@ -19,7 +19,7 @@ resource "azurerm_kubernetes_cluster" "default" {
   dns_prefix          = var.cluster_name
 
   default_node_pool {
-    name       = "test"
+    name       = "test1"
     node_count = 1
     vm_size    = "Standard_DS2_v2"
   }
