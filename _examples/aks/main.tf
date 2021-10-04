@@ -15,7 +15,14 @@ terraform {
   }
 }
 
+provider "azurerm" {
+  alias = "azure_k8s"
+  features {}
+}
+
+
 data "azurerm_kubernetes_cluster" "default" {
+  provider            = azurerm.azure_k8s
   depends_on          = [module.aks-cluster] # refresh cluster state before reading
   name                = local.cluster_name
   resource_group_name = local.cluster_name
